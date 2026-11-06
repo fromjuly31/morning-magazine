@@ -175,7 +175,7 @@
     #toolsDrawer { position: absolute; top: 100%; left: 0; right: 0; max-height: min(70dvh, 480px); overflow-y: auto; box-shadow: 0 12px 25px #1C19171A; }
     #issueChipStrip { gap: 7px; }
     #issueChipStrip button, #toolsDrawer a, #toolsDrawer button { min-height: 36px; }
-    body[data-view="magazine"] { height: 100vh; height: 100dvh; overflow: hidden; }
+    body[data-view="magazine"] { min-height: 0; height: 100vh; height: 100dvh; overflow: hidden; }
     #appMain { max-width: 1440px; }
     body[data-view="magazine"] #appMain { height: calc(100vh - var(--header-height)); height: calc(100dvh - var(--header-height)); min-height: 0; display: flex; flex-direction: column; padding: 9px 14px max(10px, env(safe-area-inset-bottom)); }
     #magazineSubBar { width: 100%; max-width: 920px; min-height: 42px; margin-bottom: 8px; padding: 4px 8px; gap: 6px; flex-shrink: 0; }
@@ -238,8 +238,8 @@
     .dialog-actions button, .dialog-actions a { min-height: 42px; padding: 10px 15px; border-radius: 9px; font-size: 12px; font-weight: 800; text-align: center; }
     .dialog-secondary { background: #F5F5F4; color: #57534E; }
     .dialog-primary { background: #292524; color: white; }
-    .image-preview-wrap { flex: 1; min-height: 0; overflow: auto; margin: 0 22px; padding: 12px; border-radius: 12px; background: #F5F5F4; display: flex; align-items: center; justify-content: center; }
-    #savedImagePreview { display: block; max-height: 53dvh; width: auto; max-width: 100%; object-fit: contain; -webkit-touch-callout: default; }
+    .image-preview-wrap { flex: 0 1 53vh; flex-basis: 53dvh; height: 53vh; height: 53dvh; min-height: 0; overflow: auto; margin: 0 22px; padding: 12px; border-radius: 12px; background: #F5F5F4; display: flex; align-items: center; justify-content: center; }
+    #savedImagePreview { display: block; max-height: 100%; width: auto; max-width: 100%; object-fit: contain; -webkit-touch-callout: default; }
     #savedImagePreview[hidden] { display: none; }
     .image-save-help { margin: 12px 22px; color: #78716C; font-size: 12px; line-height: 1.65; }
     #imageExportStatus { color: #57534E; font-size: 13px; text-align: center; padding: 30px 12px; }
@@ -275,7 +275,8 @@
       .reader-turn-next { right: 0; }
       .reader-turn .ui-icon { width: 17px; height: 17px; }
       #magazineGridSection > div:first-child { padding: 14px; }
-      #searchInput { width: 100%; }
+      #magazineGridSection > div:first-child > div:last-child { width: 100%; min-width: 0; }
+      #searchInput { width: 100%; min-height: 44px; font-size: 16px; }
       #toolsDrawer { padding: 12px; }
       .dialog-header { padding: 17px 15px 13px; }
       .selection-controls, .print-list-columns, .print-choice { padding-left: 15px; padding-right: 15px; }
